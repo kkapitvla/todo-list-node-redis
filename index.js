@@ -6,8 +6,10 @@ const app = express();
 app.use(bodyParser.json());
 
 const redisClient = redis.createClient({
+  socket: {
     host: 'redis-server',
     port: 6379
+  }
 });
 redisClient.connect();
 
